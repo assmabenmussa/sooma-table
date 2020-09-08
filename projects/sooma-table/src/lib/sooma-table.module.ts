@@ -9,6 +9,6 @@ import { SoomaTableComponent } from './sooma-table.component';
   imports: [
     CommonModule,
   ],
-  exports: [SoomaTableComponent, CommonModule]
+  exports: [SoomaTableComponent]
 })
 export class SoomaTableModule { }
