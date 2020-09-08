@@ -1,19 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
-  selector: 'lib-sooma-table',
+  selector: 'sooma-table',
   template: `
-    <p>
-      sooma-table works!
-    </p>
-  `,
-  styles: []
+    <table>
+      <tr *ngFor="let row of arr">
+        {{row}}
+      </tr>
+    </table>
+    `
 })
 export class SoomaTableComponent implements OnInit {
 
+  arr = [1, 2 , 3]
+
   constructor() { }
 
+
   ngOnInit() {
+    
   }
+
 
 }
