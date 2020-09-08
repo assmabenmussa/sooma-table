@@ -1,0 +1,52 @@
+
+<div class="row p-2 mx-0 w-100">
+    <div class="col-12 mx-auto">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <!-- NGFOR FOR TITLES -->
+            <th *ngFor="let head of table_config.titles" class="text-nowrap">
+              <ng-container *ngIf="head.type !== 'icon'">
+                {{ head.title | titlecase }}
+              </ng-container>
+              <ng-container *ngIf="head.type === 'icon'">
+                <i [class]="head.title"></i>
+              </ng-container>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- NGFOR FOR ROW -->
+          <tr *ngFor="let row of table_config.data; index as i; ">
+            <ng-container *ngFor="let attrib of table_config.titles">
+              <td class="text-nowrap">
+                <ng-container *ngIf="attrib.type !== 'icon' && attrib.type !=='date'">
+                  {{row[attrib.attribute]}}   
+                </ng-container>
+                <ng-container *ngIf="attrib.type ==='date'">
+                  {{row[attrib.attribute] | date}}   
+                </ng-container>
+                <ng-container *ngIf="attrib.type === 'icon'">
+                  <a class="cursor" *ngIf="attrib.attribute.includes('delete')" (click)="passParam('delete', row)">
+                    <i class="fa fa-trash mx-1"></i>
+                  </a>
+                  <a class="cursor" *ngIf="attrib.attribute.includes('edit')" (click)="passParam('edit', row)">
+                    <i class="fa fa-edit mx-1"></i>
+                  </a>
+                  <a class="cursor" *ngIf="attrib.attribute.includes('show')" (click)="passParam('show', row)">
+                    <i class="fa fa-eye mx-1"></i>
+                  </a>
+                </ng-container>
+              </td>
+            </ng-container>
+          </tr>
+        </tbody>
+      </table>
+      <ng-container *ngIf="table_config.data && table_config.data.length === 0">
+        <div class="alert alert-info">No data available</div>
+      </ng-container>
+      <div class="mt-5 d-flex">
+        <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
+      </div>
+    </div>
+  </div>
