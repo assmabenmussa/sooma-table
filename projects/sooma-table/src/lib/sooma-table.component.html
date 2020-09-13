@@ -5,7 +5,7 @@
         <thead>
           <tr>
             <!-- NGFOR FOR TITLES -->
-            <th *ngFor="let head of table_config.titles" class="text-nowrap">
+            <th *ngFor="let head of table_config.titles">
               <ng-container *ngIf="head.type !== 'icon'">
                 {{ head.title | titlecase }}
               </ng-container>

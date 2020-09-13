@@ -26,17 +26,21 @@ export class SoomaTableComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(){
-    this.getTable();
+    this.table_config.titles = this.headings;
+    this.table_config.data = this.data;
+    this.count = this.table_config.data.length;
+    this.parentSubject.subscribe(reply => {
+      console.log("reply in child from triggered method in parent:", reply);
+    });
   }
 
   getTable(){
     this.table_config.titles = this.headings;
     this.table_config.data = this.data;
     this.count = this.table_config.data.length;
-    console.log("this.table_config data", this.table_config);
-    this.parentSubject.subscribe(reply => {
-      console.log("reply in child from triggered method in parent:", reply);
-    });
+    // this.parentSubject.subscribe(reply => {
+    //   console.log("reply in child from triggered method in parent:", reply);
+    // });
   }
 
   passParam(action: string, row:Object) {
