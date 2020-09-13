@@ -11,7 +11,7 @@ To install run the following command: `npm install sooma-table`
 This component depends on angular only. No jQuery required. Bootstrap is optional as well but **preferred**.
 
 ## Usage Examples
-live demo will be available soon.
+Here, you will find a [live demo](https://stackblitz.com/edit/sooma-table)
 
 ## Walkthrough
 let's say you have a list of dogs you would like to display in a table. A dog object has the following format:

@@ -8,10 +8,10 @@ To install run the following command: `npm install sooma-table`
 * Adds action buttons to each row [view, edit, delete]
 
 ## Dependencies
-This component depends on angular only. No jQuery required. Bootstrap is optional as well but **preferred**.
+This component depends on **Angular ^8.x.x* and **Bootstrap 4.x.x**.
 
 ## Usage Examples
-live demo will be available soon.
+Here, you will find a [live demo](https://stackblitz.com/edit/sooma-table)
 
 ## Walkthrough
 let's say you have a list of dogs you would like to display in a table. A dog object has the following format:
